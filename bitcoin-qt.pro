@@ -1,6 +1,6 @@
 TEMPLATE = app
 TARGET = vertcoin-qt
-macx:TARGET = "Vertcoin-Qt"
+macx:TARGET = "Breezecoin-Qt"
 VERSION = 0.8.6.2
 INCLUDEPATH += src src/json src/qt
 QT += core gui network

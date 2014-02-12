@@ -19,7 +19,7 @@ implement new BOOST_AUTO_TEST_SUITE sections (the makefiles are
 set up to add test/*.cpp to test_vertcoin automatically).
 
 
-Compiling/running Vertcoin-Qt unit tests
+Compiling/running Breezecoin-Qt unit tests
 ---------------------------------------
 
 Bitcoin-Qt unit tests are in the src/qt/test/ directory; they

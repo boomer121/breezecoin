@@ -14,7 +14,7 @@ To Build
 	cd src/
 	make -f makefile.unix		# Headless vertcoin
 
-See readme-qt.rst for instructions on building Vertcoin-Qt, the graphical user interface.
+See readme-qt.rst for instructions on building Breezecoin-Qt, the graphical user interface.
 
 Dependencies
 ---------------------
