@@ -1093,261 +1093,112 @@ unsigned char GetNfactor(int64 nTimestamp) {
     return min(max(N, minNfactor), maxNfactor);
 }
 
-int static generateMTRandom(unsigned int s, int range)
-{
-    boost::mt19937 gen(s);
-    boost::uniform_int<> dist(1, range);
-    return dist(gen);
-}
-
-int64 static GetBlockValue(int nHeight, int64 nFees, unit256 prevHash)
+int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 6 * COIN;
-	std::string cseed_str = prevHash.ToString().substr(7,7);
-    const char* cseed = cseed_str.c_str();
-    long seed = hex2long(cseed);
-    int rand = 999999;
-    int rand1 = 0;
-    int rand2 = 0;
-    int rand3 = 0;
-    int rand4 = 0;
-    int rand5 = 0;
-	int rand6 = 0;
-	int rand7 = 0;
-	int rand8 = 0;
-	int rand9 = 0;
-	int rand10 = 0;
-	int rand11 = 0;
-	int rand12 = 0;
-	int rand13 = 0;
-	int rand14 = 0;
-	int rand15 = 0;
-	int rand16 = 0;
-	int rand17 = 0;
-	int rand18 = 0;
-	int rand19 = 0;
-	int rand20 = 0;
-	int rand21 = 0;
-	int rand22 = 0;
-	int rand23 = 0;
-	int rand24 = 0;
-	int rand25 = 0;
-	int rand26 = 0;
 
 	if(nHeight < 4)
     {
-        nSubsidy = (1 + rand) * COIN;
+        nSubsidy = 1000000 * COIN;
     }
-	 else if(nHeight < 10080)
+	else if(nHeight < 10080)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand1 = generateMTRandom(seed, 9999);
-        nSubsidy = (1 + rand1) * COIN;
+        nSubsidy = 5000 * COIN;
     }
     else if(nHeight < 20160)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand2 = generateMTRandom(seed, 4999);
-        nSubsidy = (1 + rand2) * COIN;
+        nSubsidy = 2500 * COIN;
     }
     else if(nHeight < 30240)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand3 = generateMTRandom(seed, 2499);
-        nSubsidy = (1 + rand3) * COIN;
+        nSubsidy = 1250 * COIN;
     }
     else if(nHeight < 40320)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand4 = generateMTRandom(seed, 1249);
-        nSubsidy = (1 + rand4) * COIN;
+        nSubsidy = 625 * COIN;
     }
     else if(nHeight < 80640)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand5 = generateMTRandom(seed, 999);
-        nSubsidy = (1 + rand5) * COIN;
+        nSubsidy = 500 * COIN;
     }
-	 else if(nHeight < 120960)
+	else if(nHeight < 120960)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand6 = generateMTRandom(seed, 799);
-        nSubsidy = (1 + rand6) * COIN;
+        nSubsidy = 400 * COIN;
     }
     else if(nHeight < 161280)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand7 = generateMTRandom(seed, 639);
-        nSubsidy = (1 + rand7) * COIN;
+        nSubsidy = 320 * COIN;
     }
     else if(nHeight < 201600)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand8 = generateMTRandom(seed, 511);
-        nSubsidy = (1 + rand8) * COIN;
+        nSubsidy = 256 * COIN;
     }
     else if(nHeight < 241920)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand9 = generateMTRandom(seed, 409);
-        nSubsidy = (1 + rand9) * COIN;
+        nSubsidy = 205 * COIN;
     }
     else if(nHeight < 282240)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand10 = generateMTRandom(seed, 327);
-        nSubsidy = (1 + rand10) * COIN;
+        nSubsidy = 164 * COIN;
     }
-		 else if(nHeight < 322560)
+	else if(nHeight < 322560)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand11 = generateMTRandom(seed, 261);
-        nSubsidy = (1 + rand11) * COIN;
+        nSubsidy = 131 * COIN;
     }
     else if(nHeight < 362880)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand12 = generateMTRandom(seed, 209);
-        nSubsidy = (1 + rand12) * COIN;
+        nSubsidy = 105 * COIN;
     }
     else if(nHeight < 403200)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand13 = generateMTRandom(seed, 167);
-        nSubsidy = (1 + rand13) * COIN;
+        nSubsidy = 84 * COIN;
     }
     else if(nHeight < 443520)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand14 = generateMTRandom(seed, 133);
-        nSubsidy = (1 + rand14) * COIN;
+        nSubsidy = 67 * COIN;
     }
     else if(nHeight < 483840)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand15 = generateMTRandom(seed, 106);
-        nSubsidy = (1 + rand15) * COIN;
+        nSubsidy = 54 * COIN;
     }
-	 else if(nHeight < 524160)
+	else if(nHeight < 524160)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand16 = generateMTRandom(seed, 85);
-        nSubsidy = (1 + rand16) * COIN;
+        nSubsidy = 43 * COIN;
     }
     else if(nHeight < 564480)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand17 = generateMTRandom(seed, 68);
-        nSubsidy = (1 + rand17) * COIN;
+        nSubsidy = 34 * COIN;
     }
     else if(nHeight < 604800)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand18 = generateMTRandom(seed, 54);
-        nSubsidy = (1 + rand18) * COIN;
+        nSubsidy = 27 * COIN;
     }
     else if(nHeight < 645120)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand19 = generateMTRandom(seed, 43);
-        nSubsidy = (1 + rand19) * COIN;
+        nSubsidy = 22 * COIN;
     }
     else if(nHeight < 685440)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand20 = generateMTRandom(seed, 34);
-        nSubsidy = (1 + rand20) * COIN;
+        nSubsidy = 18 * COIN;
     }
 	else if(nHeight < 725760)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand21 = generateMTRandom(seed, 27);
-        nSubsidy = (1 + rand21) * COIN;
+        nSubsidy = 14 * COIN;
     }
     else if(nHeight < 766080)
     {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand22 = generateMTRandom(seed, 22);
-        nSubsidy = (1 + rand22) * COIN;
+        nSubsidy = 11 * COIN;
     }
     else if(nHeight < 806400)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand23 = generateMTRandom(seed, 17);
-        nSubsidy = (1 + rand23) * COIN;
+        nSubsidy = 9 * COIN;
     }
     else if(nHeight < 846720)
     {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand24 = generateMTRandom(seed, 13);
-        nSubsidy = (1 + rand24) * COIN;
+        nSubsidy = 7 * COIN;
     }
-    else if(nHeight < 887040)
-    {
-        cseed_str = prevHash.ToString().substr(6,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand25 = generateMTRandom(seed, 11);
-        nSubsidy = (1 + rand25) * COIN;
-    }
-	 else if(nHeight < 927360)
-    {
-        cseed_str = prevHash.ToString().substr(7,7);
-        cseed = cseed_str.c_str();
-        seed = hex2long(cseed);
-        rand26 = generateMTRandom(seed, 8);
-        nSubsidy = (1 + rand26) * COIN;
-    }
-	
-    return nSubsidy + nFees;
+  
+  return nSubsidy + nFees;
 }
 
 
@@ -2076,13 +1927,7 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     if (fBenchmark)
         printf("- Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin)\n", (unsigned)vtx.size(), 0.001 * nTime, 0.001 * nTime / vtx.size(), nInputs <= 1 ? 0 : 0.001 * nTime / (nInputs-1));
 	
-	uint256 prevHash = 0;
-    if(pindex->pprev)
-    {
-        prevHash = pindex->pprev->GetBlockHash();
-    }
-	
-    if (vtx[0].GetValueOut() > GetBlockValue(pindex->nHeight, nFees, prevHash))
+    if (vtx[0].GetValueOut() > GetBlockValue(pindex->nHeight, nFees))
         return state.DoS(100, error("ConnectBlock() : coinbase pays too much (actual=%"PRI64d" vs limit=%"PRI64d")", vtx[0].GetValueOut(), GetBlockValue(pindex->nHeight, nFees)));
 
     if (!control.Wait())
