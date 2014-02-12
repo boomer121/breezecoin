@@ -3140,7 +3140,7 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char* pszTimestamp = "01/09/2014 Germany to Help in Disposal of Syrian Chemical Weapons";
+        const char* pszTimestamp = "02/12/2014 First Test Build of BreezeCoin";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -3155,13 +3155,13 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nBits    = 0x1e0ffff0;
         block.nNonce = 5749262;
-        block.nTime = 1389311371;
+        block.nTime = 1392213644;
         
         if (fTestNet)
         {
 
             block.nNonce = 11521194;
-            block.nTime = 1389306217;
+            block.nTime = 1392213644;
         }
 
         //// debug print
