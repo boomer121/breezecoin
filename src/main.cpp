@@ -1093,6 +1093,12 @@ unsigned char GetNfactor(int64 nTimestamp) {
     return min(max(N, minNfactor), maxNfactor);
 }
 
+int static generateMTRandom(unsigned int s, int range)
+{
+    boost::mt19937 gen(s);
+    boost::uniform_int<> dist(1, range);
+    return dist(gen);
+}
 
 int64 static GetBlockValue(int nHeight, int64 nFees, unit256 prevHash)
 {
