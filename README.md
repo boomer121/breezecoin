@@ -1,7 +1,7 @@
 Breezecoin integration/staging tree
 ================================
 
-http://www.vertcoin.org
+http://www.breezecoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
@@ -18,7 +18,7 @@ Breezecoin is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-wo
  - Every block to retarget difficulty with Kimotos Gravity Well algorithm
 
 For more information, as well as an immediately useable, binary version of
-the Breezecoin client sofware, see http://www.vertcoin.org.
+the Breezecoin client sofware, see http://www.breezecoin.org.
 
 License
 -------
@@ -69,5 +69,5 @@ Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
     qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
     make -f Makefile.test
-    ./vertcoin-qt_test
+    ./breezecoin-qt_test
 

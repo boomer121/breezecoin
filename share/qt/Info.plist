@@ -3,7 +3,7 @@
 <plist version="0.9">
 <dict>
 	<key>CFBundleIconFile</key>
-	<string>vertcoin.icns</string>
+	<string>breezecoin.icns</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleGetInfoString</key>
@@ -17,17 +17,17 @@
 	<key>CFBundleExecutable</key>
 	<string>Breezecoin-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.vertcoin.Breezecoin-Qt</string>
+	<string>org.breezecoin.Breezecoin-Qt</string>
         <key>CFBundleURLTypes</key>
         <array>
           <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>org.vertcoin.BreezecoinPayment</string>
+            <string>org.breezecoin.BreezecoinPayment</string>
             <key>CFBundleURLSchemes</key>
             <array>
-              <string>vertcoin</string>
+              <string>breezecoin</string>
             </array>
           </dict>
         </array>

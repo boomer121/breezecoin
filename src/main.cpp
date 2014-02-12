@@ -1291,10 +1291,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 {
         int DiffMode = 1; // legacy diff-mode
         if (fTestNet) {
-                if (pindexLast->nHeight+1 >= 2116) { DiffMode = 2; } // vertcoin, 100 blocks after first legacy diff adjustment
+                if (pindexLast->nHeight+1 >= 2116) { DiffMode = 2; } // breezecoin, 100 blocks after first legacy diff adjustment
         }
         else {         
-        	if (pindexLast->nHeight+1 >= 26754) { DiffMode = 2; }  //vertcoin, 5 days after 27/01/2014 12:00 UTC
+        	if (pindexLast->nHeight+1 >= 26754) { DiffMode = 2; }  //breezecoin, 5 days after 27/01/2014 12:00 UTC
         }
         
         if                (DiffMode == 1) { return GetNextWorkRequired_V1(pindexLast, pblock); } //legacy diff mode
@@ -4692,7 +4692,7 @@ void static BreezecoinMiner(CWallet *pwallet)
 {
     printf("BreezecoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("vertcoin-miner");
+    RenameThread("breezecoin-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);

@@ -84,6 +84,6 @@ Breezecoin
 -------
 DOS prompt:
 
-	cd \vertcoin\src
+	cd \breezecoin\src
 	mingw32-make -f makefile.mingw
-	strip vertcoind.exe
+	strip breezecoind.exe

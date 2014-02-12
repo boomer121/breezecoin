@@ -1,4 +1,4 @@
-Mac OS X vertcoind build instructions
+Mac OS X breezecoind build instructions
 ====================================
 
 Authors
@@ -72,14 +72,14 @@ Installing the dependencies using MacPorts is very straightforward.
 
     sudo port install boost db48@+no_java openssl miniupnpc
 
-### Building `vertcoind`
+### Building `breezecoind`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone git@github.com:vertcoin-project/vertcoin.git vertcoin
-        cd vertcoin
+        git clone git@github.com:breezecoin-project/breezecoin.git breezecoin
+        cd breezecoin
 
-2.  Build vertcoind:
+2.  Build breezecoind:
 
         cd src
         make -f makefile.osx
@@ -107,12 +107,12 @@ If not, you can ensure that the Brew OpenSSL is correctly linked by running
 
 Rerunning "openssl version" should now return the correct version.
 
-### Building `vertcoind`
+### Building `breezecoind`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone git@github.com:vertcoin-project/vertcoin.git vertcoin
-        cd vertcoin
+        git clone git@github.com:breezecoin-project/breezecoin.git breezecoin
+        cd breezecoin
 
 2.  Modify source in order to pick up the `openssl` library.
 
@@ -122,7 +122,7 @@ Rerunning "openssl version" should now return the correct version.
 
         patch -p1 < contrib/homebrew/makefile.osx.patch
 
-3.  Build vertcoind:
+3.  Build breezecoind:
 
         cd src
         make -f makefile.osx
@@ -134,8 +134,8 @@ Rerunning "openssl version" should now return the correct version.
 Creating a release build
 ------------------------
 
-A vertcoind binary is not included in the Breezecoin-Qt.app bundle. You can ignore
-this section if you are building `vertcoind` for your own use.
+A breezecoind binary is not included in the Breezecoin-Qt.app bundle. You can ignore
+this section if you are building `breezecoind` for your own use.
 
 If you are building `litecond` for others, your build machine should be set up
 as follows for maximum compatibility:
@@ -166,20 +166,20 @@ Once dependencies are compiled, creating `Breezecoin-Qt.app` is easy:
 Running
 -------
 
-It's now available at `./vertcoind`, provided that you are still in the `src`
+It's now available at `./breezecoind`, provided that you are still in the `src`
 directory. We have to first create the RPC configuration file, though.
 
-Run `./vertcoind` to get the filename where it should be put, or just try these
+Run `./breezecoind` to get the filename where it should be put, or just try these
 commands:
 
-    echo -e "rpcuser=vertcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Breezecoin/vertcoin.conf"
-    chmod 600 "/Users/${USER}/Library/Application Support/Breezecoin/vertcoin.conf"
+    echo -e "rpcuser=breezecoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Breezecoin/breezecoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Breezecoin/breezecoin.conf"
 
 When next you run it, it will start downloading the blockchain, but it won't
 output anything while it's doing this. This process may take several hours.
 
 Other commands:
 
-    ./vertcoind --help  # for a list of command-line options.
-    ./vertcoind -daemon # to start the vertcoin daemon.
-    ./vertcoind help    # When the daemon is running, to get a list of RPC commands
+    ./breezecoind --help  # for a list of command-line options.
+    ./breezecoind -daemon # to start the breezecoin daemon.
+    ./breezecoind help    # When the daemon is running, to get a list of RPC commands

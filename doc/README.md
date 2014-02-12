@@ -26,12 +26,12 @@ You need the Qt4 run-time libraries to run Breezecoin-Qt. On Debian or Ubuntu:
 
 Unpack the files into a directory and run:
 
-- bin/32/vertcoin-qt (GUI, 32-bit)
-- bin/32/vertcoind (headless, 32-bit)
-- bin/64/vertcoin-qt (GUI, 64-bit)
-- bin/64/vertcoind (headless, 64-bit)
+- bin/32/breezecoin-qt (GUI, 32-bit)
+- bin/32/breezecoind (headless, 32-bit)
+- bin/64/breezecoin-qt (GUI, 64-bit)
+- bin/64/breezecoind (headless, 64-bit)
 
-See the documentation at the [Breezecoin Wiki](http://vertcoin.org)
+See the documentation at the [Breezecoin Wiki](http://breezecoin.org)
 for help and more information.
 
 

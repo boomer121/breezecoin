@@ -193,10 +193,10 @@ bool AppInit(int argc, char* argv[])
             // First part of help message is specific to bitcoind / RPC client
             std::string strUsage = _("Breezecoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  vertcoind [options]                     " + "\n" +
-                  "  vertcoind [options] <command> [params]  " + _("Send command to -server or vertcoind") + "\n" +
-                  "  vertcoind [options] help                " + _("List commands") + "\n" +
-                  "  vertcoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  breezecoind [options]                     " + "\n" +
+                  "  breezecoind [options] <command> [params]  " + _("Send command to -server or breezecoind") + "\n" +
+                  "  breezecoind [options] help                " + _("List commands") + "\n" +
+                  "  breezecoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -206,7 +206,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "vertcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "breezecoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -309,8 +309,8 @@ std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
         "  -?                     " + _("This help message") + "\n" +
-        "  -conf=<file>           " + _("Specify configuration file (default: vertcoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: vertcoind.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: breezecoin.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: breezecoind.pid)") + "\n" +
         "  -gen                   " + _("Generate coins (default: 0)") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
         "  -dbcache=<n>           " + _("Set database cache size in megabytes (default: 25)") + "\n" +
