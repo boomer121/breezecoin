@@ -272,7 +272,7 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 71, // Breezecoin addresses start with V
+        PUBKEY_ADDRESS = 25, // Breezecoin addresses start with B
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 74,
         SCRIPT_ADDRESS_TEST = 196,
