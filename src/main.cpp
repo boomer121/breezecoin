@@ -3308,7 +3308,7 @@ bool InitBlockIndex() {
 #endif
 #else
                 // Generic scrypt
-                scrypt_1024_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+                scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
 #endif
                 if (thash <= hashTarget)
                     break;
