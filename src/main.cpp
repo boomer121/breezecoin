@@ -3300,14 +3300,14 @@ bool InitBlockIndex() {
                 // it is faster to use directly than to use a function pointer or conditional.
 #if defined(_M_X64) || defined(__x86_64__) || defined(_M_AMD64) || (defined(MAC_OSX) && defined(__i386__))
                 // Always SSE2: x86_64 or Intel MacOS X
-                scrypt_N_1_1_256_sp_sse2(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+                scrypt_N_1_1_256_sp_sse2(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
 #else
                 // Detect SSE2: 32bit x86 Linux or Windows
-                scrypt_N_1_1_256_sp(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+                scrypt_N_1_1_256_sp(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
 #endif
 #else
                 // Generic scrypt
-                scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+                scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
 #endif
                 if (thash <= hashTarget)
                     break;
