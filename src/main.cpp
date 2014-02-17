@@ -31,7 +31,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x4d96a915f49d40b1e5c2844d1ee2dccb90013a990ccea12c492d22110489f0c4");
+uint256 hashGenesisBlock("0xb97ea03f4c69945502c40af75a6ccfb1d246de2c0133e45c8535c895768f1641");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Breezecoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -3225,7 +3225,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 'e';
         pchMessageStart[2] = 'r';
         pchMessageStart[3] = 't';
-        hashGenesisBlock = uint256("0xbd270cb82121e85f4eba6d0c2ffdc9eb74674eb9bafed9bbaa0fe8f47d971aae");
+        hashGenesisBlock = uint256("0xb97ea03f4c69945502c40af75a6ccfb1d246de2c0133e45c8535c895768f1641");
         //hashGenesisBlock = uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f");
     }
 
