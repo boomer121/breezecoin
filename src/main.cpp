@@ -1489,7 +1489,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 
 // legacy diff-mode
-unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     unsigned int nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
 
