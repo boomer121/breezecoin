@@ -3314,7 +3314,7 @@ bool InitBlockIndex() {
         printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
 		block.print();
         assert(hash == hashGenesisBlock);
-	}		
+			
         // Start new block file
         try {
             unsigned int nBlockSize = ::GetSerializeSize(block, SER_DISK, CLIENT_VERSION);
