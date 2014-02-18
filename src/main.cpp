@@ -3292,11 +3292,11 @@ bool InitBlockIndex() {
             // creating a different genesis block:
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             uint256 thash;
-            static char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+            char scratchpad[scrypt_scratpad_size_current_block];
 
             while(true)
             {
-                scrypt_N_1_1_256_sp(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
+                scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
                 if (thash <= hashTarget)
                     break;
                 if ((block.nNonce & 0xFFF) == 0)
@@ -5137,7 +5137,7 @@ void static BreezecoinMiner(CWallet *pwallet)
             {
 
                 // Generic scrypt
-                scrypt_N_1_1_256_sp(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad, GetNfactor(pblock->nTime));
+                scrypt_N_1_1_256_sp_generic(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad, GetNfactor(pblock->nTime));
 
 
                 if (thash <= hashTarget)
