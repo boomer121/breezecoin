@@ -3312,6 +3312,7 @@ bool InitBlockIndex() {
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
         printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
+	}	
 		block.print();
         assert(hash == hashGenesisBlock);
 			
