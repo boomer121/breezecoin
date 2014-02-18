@@ -3292,12 +3292,12 @@ bool InitBlockIndex() {
             // creating a different genesis block:
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             uint256 thash;
-			unsigned long int scrypt_scratpad_size_current_block = ((1 << (GetNfactor(pblock->nTime) + 1)) * 128 ) + 63;
+			unsigned long int scrypt_scratpad_size_current_block = ((1 << (GetNfactor(block.nTime) + 1)) * 128 ) + 63;
             char scratchpad[scrypt_scratpad_size_current_block];
 
 			while(true)
             {
-                scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, Nfactor);
+                scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
                 if (thash <= hashTarget)
                     break;
                 if ((block.nNonce & 0xFFF) == 0)
