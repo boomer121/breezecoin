@@ -3294,8 +3294,7 @@ bool InitBlockIndex() {
 
         while(true)
         {
-            static char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
-            scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
+			thash = scrypt_blockhash(BEGIN(block.nVersion, GetNfactor(block.nTime));
             if (thash <= hashTarget)
                 break;
             if ((block.nNonce & 0xFFF) == 0)
