@@ -5127,9 +5127,9 @@ void static BreezecoinMiner(CWallet *pwallet)
             
             char scratchpad[scrypt_scratpad_size_current_block];
             
-            printf("nTime -> %d", pblock->nTime);
+           /* printf("nTime -> %d", pblock->nTime);
             printf("scrypt_scratpad_size_current_block -> %ld", sizeof(scrypt_scratpad_size_current_block));
-            printf("scratchpad -> %d", sizeof(scratchpad));
+            printf("scratchpad -> %d", sizeof(scratchpad));*/
             
             loop
             {
