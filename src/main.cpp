@@ -3294,7 +3294,8 @@ bool InitBlockIndex() {
 
         while(true)
         {
-			thash = scrypt_blockhash(BEGIN(block.nVersion, GetNfactor(block.nTime));
+            static char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+            scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
             if (thash <= hashTarget)
                 break;
             if ((block.nNonce & 0xFFF) == 0)
@@ -5126,9 +5127,9 @@ void static BreezecoinMiner(CWallet *pwallet)
             
             char scratchpad[scrypt_scratpad_size_current_block];
             
-            /*printf("nTime -> %d", pblock->nTime);
+            printf("nTime -> %d", pblock->nTime);
             printf("scrypt_scratpad_size_current_block -> %ld", sizeof(scrypt_scratpad_size_current_block));
-            printf("scratchpad -> %d", sizeof(scratchpad));*/
+            printf("scratchpad -> %d", sizeof(scratchpad));
             
             loop
             {
