@@ -3292,7 +3292,7 @@ bool InitBlockIndex() {
             // creating a different genesis block:
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             uint256 thash;
-            static char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+            static const int scratchpad[SCRYPT_SCRATCHPAD_SIZE];
 
             loop
             {
